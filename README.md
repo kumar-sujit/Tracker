@@ -1,1 +1,1 @@
-Hi i am trying to use this file as a chat and i will try to post my tasks here with errors that i face while i do
+sujit will you push the new code to script file and can you briefly exaplain where i need to execute the file
