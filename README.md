@@ -9,3 +9,6 @@ Steps:
 6. Add the copied ssh-key and check the box corresponding to "use ssh keys for pushing the code"
 7. Save it.
 8. Go to the jenkins machine and clone the repo once with the ssh url, so that the repository IP is stored in the known hosts of the jenkins machine.
+
+
+Updated the script, please use the same to push the code to remote repository
