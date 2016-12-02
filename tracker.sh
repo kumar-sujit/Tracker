@@ -7,5 +7,5 @@ echo "Date : " `date +"%c"` >> tracker.txt
 git add --all
 git config user.email "sujit@addteq.com"
 git config user.name "sujitkumar"
-git commit -am "$GIT_AUTHOR has made a new change for this micro-service"
-git push origin master
+git commit -am "$GIT_AUTHOR has made a new change for this $JOB_NAME"
+git push https://<username>:<password>github.com/kumar-sujit/Tracker.git
