@@ -24,13 +24,14 @@ echo -e
     \"Git Commit\":\"$GIT_COMMIT\"}" >> myfile.json
 cat myfile.json
 git init
-git remote add origin https://sgudipad@codehub.optum.com/devpoc/trackerrepo.git
+#git remote add origin https://sgudipad@codehub.optum.com/devpoc/trackerrepo.git
 git add --all
 git commit -m " Adding content to json file "
 git push https://<xxxxxx>:<xxxxxx>sgudipad@codehub.optum.com/devpoc/trackerrepo.git
 
 
 Error:
+ No such file or directory
 
 Build step 'Execute shell' marked build as failure
 
