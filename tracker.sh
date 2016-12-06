@@ -4,6 +4,7 @@ echo "Branch Name : "$GIT_BRANCH >> tracker.txt
 echo "Build Number : "$BUILD_NUMBER >> tracker.txt
 echo "Commit ID : "$GIT_COMMIT >> tracker.txt
 echo "Date : " `date +"%c"` >> tracker.txt
+awk -F: 'BEGIN {print "{" }{print "\"" $1"\":" " \""$2"\","}END{print "}"}' tracker.txt > tracker.json
 git add --all
 git config user.email "sujit@addteq.com"
 git config user.name "sujitkumar"
