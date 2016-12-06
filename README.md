@@ -12,3 +12,27 @@ Steps:
 
 
 Updated the script, please use the same to push the code to remote repository
+pwd
+cd $pwd
+mkdir test
+cd test
+touch myfile.json
+echo -e 
+	"{\"Microservice Name\":\"$JOB_NAME\",
+    \"Branch Name\":\"$GIT_BRANCH\",
+    \"Build Number\":\"$BUILD_NUMBER\",
+    \"Git Commit\":\"$GIT_COMMIT\"}" >> myfile.json
+cat myfile.json
+git init
+#git remote add origin https://sgudipad@codehub.optum.com/devpoc/trackerrepo.git
+git add --all
+git commit -m " Adding content to json file "
+git push https://<xxxxxx>:<xxxxxx>sgudipad@codehub.optum.com/devpoc/trackerrepo.git
+
+
+Error:
+ No such file or directory
+
+Build step 'Execute shell' marked build as failure
+
+Finished: FAILURE
