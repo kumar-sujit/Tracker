@@ -1,10 +1,14 @@
 cd /home/addteq/prabhu_test1
-echo "MicroService Name" : "$JOB_NAME" > $JOB_NAME.txt
-echo "Branch Name" : "$GIT_BRANCH" >> $JOB_NAME.txt
-echo "Build Number : "$BUILD_NUMBER >> $JOB_NAME.txt
-echo "Commit ID : "$GIT_COMMIT >> $JOB_NAME.txt
-echo "Date : " `date +"%c"` >> $JOB_NAME.txt
-awk -F: 'BEGIN {print "{" }{print "\"" $1"\":" " \""$2"\","}END{print "}"}' $JOB_NAME.txt > $JOB_NAME.json
+pwd
+echo $JOB_BASE_NAME
+echo "MicroService Name" : "$JOB_BASE_NAME" > $JOB_BASE_NAME.txt
+echo "Branch Name" : "$GIT_BRANCH" >> $JOB_BASE_NAME.txt
+echo "Build Number : "$BUILD_NUMBER >> $JOB_BASE_NAME.txt
+echo "Commit ID : "$GIT_COMMIT >> $JOB_BASE_NAME.txt
+echo "Date : " `date +"%c"` >> $JOB_BASE_NAME.txt
+echo "Build Tag : " $BUILD_TAG >> $JOB_BASE_NAME.txt
+echo "Change Author : "$CHANGE_AUTHOR_DISPLAY_NAME >> $JOB_BASE_NAME.txt
+awk -F: 'BEGIN {print "{" }{print "\"" $1"\":" " \""$2"\","}END{print "}"}' $JOB_BASE_NAME.txt > $JOB_BASE_NAME.json
 git add --all
 git config user.email "sujit@addteq.com"
 git config user.name "sujitkumar"
