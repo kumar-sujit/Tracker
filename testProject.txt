@@ -1,2 +1,7 @@
-{
-}
+MicroService Name : testProject
+Branch Name : origin/master
+Build Number : 53
+Commit ID : c1416317da45698d07c3b2b8b4f639002d1cc38d
+Date :  Thursday 08 December 2016 08:32:43 AM IST
+Build Tag :  jenkins-testProject-53
+Change Author : 
