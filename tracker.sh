@@ -8,7 +8,9 @@ echo "Commit ID : "$GIT_COMMIT >> $JOB_BASE_NAME.txt
 echo "Date : " `date +"%c"` >> $JOB_BASE_NAME.txt
 echo "Build Tag : " $BUILD_TAG >> $JOB_BASE_NAME.txt
 echo "Change Author : "$CHANGE_AUTHOR_DISPLAY_NAME >> $JOB_BASE_NAME.txt
+sed -i '/Date/s/:/-/2g' $JOB_BASE_NAME.txt
 awk -F: 'BEGIN {print "{" }{print "\"" $1"\":" " \""$2"\","}END{print "}"}' $JOB_BASE_NAME.txt > $JOB_BASE_NAME.json
+sed -i '/Date/s/-/:/g' $JOB_BASE_NAME.json
 git add --all
 git config user.email "sujit@addteq.com"
 git config user.name "sujitkumar"
