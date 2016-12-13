@@ -1,9 +1,10 @@
 {
 "MicroService Name ": " testProject",
 "Branch Name ": " origin/master",
-"Build Number ": " 89",
-"Commit ID ": " a0ed946ab68158d497d2b536b8bdb7ca709a0072",
-"Date ": "  Saturday 10 December 2016 09:48:43 PM IST",
-"Build Tag ": "  jenkins-Trackers-testProject-89",
+"Build Number ": " 90",
+"Commit ID ": " 35df23e90cd9bc077b75cdf27aa9c8715db9fd3b",
+"Date ": "  Tuesday 13 December 2016 08:49:21 AM IST",
+"Build Tag ": "  jenkins-Trackers-testProject-90",
+"POM Version ": " ",
 "Change Author ": " sujitkumar",
 }
