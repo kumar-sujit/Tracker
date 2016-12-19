@@ -35,3 +35,34 @@ echo $latestTag
 
 *******
 Can you send the full script that i can execute
+
+
+**************************************
+#!/bin/bash
+MicroServiceName=${JOB_NAME##*/}
+credentials=propel_dev:9SC52idT
+git clone https://${credentials}@codehub.optum.com/propel/$MicroServiceName.git
+cd $MicroServiceName
+Git_Tag_Commit=`git rev-list --tags --max-count=1`
+Git_Latest_Tag=`git describe --tags $Git_Tag_Commit`
+echo $Git_Latest_Tag
+cd ..
+rm -rf $MicroServiceName
+echo "MicroService Name:"$MicroServiceName > ${MicroServiceName}.txt
+echo "Branch Name :"$GIT_BRANCH >> ${MicroServiceName}.txt
+echo "Build Number:"$BUILD_NUMBER >> ${MicroServiceName}.txt
+echo "Commit ID :"$GIT_COMMIT >> ${MicroServiceName}.txt
+echo "Stage Completion Tag :" $Git_Latest_Tag >> ${MicroServiceName}.txt
+sed -i '/Date/s/-/2g' ${MicroServiceName}.txt
+awk -F: 'BEGIN {print "{"}{print "\"" $1"\":" " \""$2"\","}END{print "}"}' ${MicroserviceName}.txt > ${MicroServiceName}.json
+sed -i '/Date/s/-/g' ${MicroService}.txt
+rm ${MicroServiceName}.txt
+git init
+git config --global user.email "sai.gudiapdi@optum.com"
+git config --global user.name "sai gudipati"
+git remote add origin https://${credentials}@codehub.optum.com/propel/tracker-repo.git
+git add .
+git commit -m "$GIT_AUTHOR made a few changes for this ${MicroServiceName}"
+git fetch origin master
+git merge -s recursive -Xours origin/master
+git push origin master
