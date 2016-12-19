@@ -17,3 +17,17 @@ cd ..
 rm -rf $Microservice.git
 echo "Tag after removing directory :"$Git_Latest_Tag
 Rest of the old script
+my colleguge is able to get the latest tag with this
+
+git init
+git config --global user.email "david.johnston@optum.com"
+git config --global user.name "david johnston"
+git remote set-url origin https://djohnst2:${djohnst2}@codehub.optum.com/propel/braas.git
+
+# Get new tags from remote
+git fetch --tags
+
+# Get latest tag name
+latestTag=$(git describe --tags `git rev-list --tags --max-count=1`)
+
+echo $latestTag
