@@ -1,6 +1,5 @@
 Git_Tag_Commit=git rev-list --tags --max-count=1
 Git_Latest_Tag=`git describe --tags $Git_Tag_Commit`
-Git_Tag=`git describe --tags `git rev-list --tags --max-count=1``
 cd /home/addteq/prabhu_test1
 pwd
 echo $JOB_BASE_NAME
