@@ -1,3 +1,6 @@
+Git_Tag_Commit=git rev-list --tags --max-count=1
+Git_Latest_Tag=`git describe --tags $Git_Tag_Commit`
+Git_Tag=`git describe --tags `git rev-list --tags --max-count=1``
 cd /home/addteq/prabhu_test1
 pwd
 echo $JOB_BASE_NAME
@@ -6,7 +9,7 @@ echo "Branch Name" : "$GIT_BRANCH" >> $JOB_BASE_NAME.txt
 echo "Build Number : "$BUILD_NUMBER >> $JOB_BASE_NAME.txt
 echo "Commit ID : "$GIT_COMMIT >> $JOB_BASE_NAME.txt
 echo "Date : " `date +"%c"` >> $JOB_BASE_NAME.txt
-echo "Build Tag : " $BUILD_TAG >> $JOB_BASE_NAME.txt
+echo "Build Tag : " $Git_Latest_Tag >> $JOB_BASE_NAME.txt
 echo "Change Author : "$CHANGE_AUTHOR_DISPLAY_NAME >> $JOB_BASE_NAME.txt
 sed -i '/Date/s/:/-/2g' $JOB_BASE_NAME.txt
 awk -F: 'BEGIN {print "{" }{print "\"" $1"\":" " \""$2"\","}END{print "}"}' $JOB_BASE_NAME.txt > $JOB_BASE_NAME.json
