@@ -1,0 +1,4 @@
+MicroService Name : bugzilla
+Branch Name : origin/master
+Build Number : 6
+GitTagg      :  $timestamp
