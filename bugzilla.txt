@@ -1,4 +1,4 @@
 MicroService Name : bugzilla
 Branch Name : origin/master
-Build Number : 7
+Build Number : 8
 GitTagg      :  $timestamp
