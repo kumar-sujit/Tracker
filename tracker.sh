@@ -20,3 +20,11 @@ git commit -am "$GIT_AUTHOR has made a new change for this $MicroServiceName"
 #set +x
 #git pull https://${credentials}@github.com/kumar-sujit/Tracker.git Dev
 git push https://${credentials}@github.com/kumar-sujit/Tracker.git Stage
+
+
+echo $GIT_COMMIT
+if [ $ROLLBACK != "NO" ]; then
+wget https://github.com/kumar-sujit/Tracker/raw/Stage/tracker.json
+GIT_COMMIT=`grep "Commit ID" tracker.json |  awk -F\" '{print $(NF-1)}'`
+echo $GIT_COMMIT
+fi
