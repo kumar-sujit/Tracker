@@ -6,6 +6,11 @@ app_name="provider-auto-update"
 #tmp_app_name="api"
 deploy_project="propel-stg"
 
+if [ $ROLLBACK = "YES] ; then
+app_name="provider-auto-update-$version"
+git_tag=`git tag | tail -1`
+fi
+
 export PATH=$PATH:/tools/oc/oc-${OC_VERSION}/oc
 echo "Logging in to ${ose_domain} as ${ose_user}"
 oc login https://${ose_domain} --insecure-skip-tls-verify=true -u ${ose_user} -p ${ose_pass}
