@@ -28,3 +28,12 @@ wget https://github.com/kumar-sujit/Tracker/raw/Stage/tracker.json
 GIT_COMMIT=`grep "Commit ID" tracker.json |  awk -F\" '{print $(NF-1)}'`
 echo $GIT_COMMIT
 fi
+
+
+echo $GIT_COMMIT
+if [ $ROLLBACK != "NO" ]; then
+git clone --single-branch https://github.com/kumar-sujit/Tracker.git Stage
+cd Tracker
+GIT_COMMIT=`git show HEAD~2:tracker.json | grep "Commit ID" tracker.json |  awk -F\" '{print $(NF-1)}'`
+echo $GIT_COMMIT
+fi
