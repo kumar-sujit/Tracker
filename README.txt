@@ -45,6 +45,7 @@ filename=${MicroServiceName}
 declare -l filename
 filename=${filename}
 credential=$1
+if [ -z $GIT_TAG ]; then
 git clone https://${credential}@codehub.optum.com/rollback-demo/${filename}.git
 cd ${filename}
 Git_Tag_Commit=`git rev-list --tags --max-count=1`
@@ -52,6 +53,9 @@ Git_Latest_Tag=`git describe --tags $Git_Tag_Commit`
 echo $Git_Latest_Tag
 cd ..
 rm -rf ${filename}
+else
+Git_Latest_Tag=$GIT_TAG
+fi
 echo "MicroService Name:"${filename} > ${filename}.txt
 echo "Version:" $Version >> ${filename}.txt
 echo "Branch Name :"$BranchName >> ${filename}.txt
