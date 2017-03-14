@@ -1,5 +1,6 @@
 Git_Tag_Commit=git rev-list --tags --max-count=1
 Git_Latest_Tag=`git describe --tags $Git_Tag_Commit`
+GIT_URL=`git config --get remote.tracker.url`
 cd /home/addteq/prabhu_test1
 pwd
 echo $JOB_BASE_NAME
@@ -8,6 +9,7 @@ echo "Branch Name" : "$GIT_BRANCH" >> $JOB_BASE_NAME-$POM_VERSION.txt
 echo "Build Number : "$BUILD_NUMBER >> $JOB_BASE_NAME-$POM_VERSION.txt
 echo "Commit ID : "$GIT_COMMIT >> $JOB_BASE_NAME-$POM_VERSION.txt
 echo "Date : " `date +"%c"` >> $JOB_BASE_NAME-$POM_VERSION.txt
+echo "Git URL : " "$GIT_URL" >> $JOB_BASE_NAME-$POM_VERSION.txt
 echo "Build Tag : " $Git_Latest_Tag >> $JOB_BASE_NAME-$POM_VERSION.txt
 echo "Change Author : "$CHANGE_AUTHOR_DISPLAY_NAME >> $JOB_BASE_NAME-$POM_VERSION.txt
 sed -i '/Date/s/:/-/2g' $JOB_BASE_NAME-$POM_VERSION.txt
