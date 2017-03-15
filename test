@@ -1,0 +1,7 @@
+filename=$(Microservicename)
+declare -l filename
+filename=$filename
+credentail=$1
+if [-z $GIT_TAG ]; then
+git clone https://${credetential}@codehub.optum.com/orgname/$filename.git
+cd $filename
