@@ -1,11 +1,9 @@
-{
 "MicroService Name ": " testProject",
 "Branch Name ": " origin/master",
-"Build Number ": " 107",
+"Build Number ": " 106",
 "Commit ID ": " 35df23e90cd9bc077b75cdf27aa9c8715db9fd3b",
 "GIT URL ": " https://github.com/kumar-sujit/Tracker.git",
-"Date ": "  Friday 17 March 2017 12:01:27 AM IST",
-"Build Tag ": " jenkins-Trackers-testProject-107",
+"Date ": "  Wednesday 15 March 2017 08:09:49 PM IST",
+"Build Tag ": " jenkins-Trackers-testProject-106",
 "POM Version ": " ",
 "Change Author ": " sujitkumar",
-}
