@@ -17,6 +17,8 @@ sed -i '/GIT URL/s/:/-/2g' $JOB_BASE_NAME-$POM_VERSION.txt
 awk -F: 'BEGIN {print "{" }{print "\"" $1"\":" " \""$2"\","}END{print "}"}' $JOB_BASE_NAME-$POM_VERSION.txt > $JOB_BASE_NAME-$POM_VERSION.json
 sed -i '/Date/s/-/:/g' $JOB_BASE_NAME-$POM_VERSION.json
 sed -i '/GIT URL/s/:/-/' $JOB_BASE_NAME-$POM_VERSION.txt
+sed 's/ : /=/g' testProject.txt  > testProject.properties
+sed -i 's/ //g' testProject.properties
 git add --all
 git config user.email "sujit@addteq.com"
 git config user.name "sujitkumar"
