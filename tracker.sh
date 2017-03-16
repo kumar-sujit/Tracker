@@ -26,3 +26,4 @@ git commit -am "$GIT_AUTHOR has made a new change for this $JOB_NAME"
 set +x
 git pull https://${credentials}@github.com/kumar-sujit/Tracker.git master
 git push https://${credentials}@github.com/kumar-sujit/Tracker.git master
+sed '1d;$d' testProject.json | sed 's/:/=/'| sed  's/ "= " /"="/' |sed 's/ //' | awk -F \" '{print $2 $3 $4}'
